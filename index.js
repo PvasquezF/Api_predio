@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const index = require('./api/index');
 const roles = require('./api/roles');
 const usuarios = require('./api/usuarios');
@@ -8,6 +9,7 @@ const estados = require('./api/estados');
 const compras = require('./api/compras');
 const port = 3000;
 
+app.use(bodyParser.json());
 index.routesConfig(app);
 roles.routesConfig(app);
 usuarios.routesConfig(app);
