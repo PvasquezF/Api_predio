@@ -11,6 +11,7 @@ Para cada enunciado descrito:
 - Estadisticas /estadisticasAdmin | /estadisticasComprador/cui | /estadisticasVendedor/cui
 
 Para cada endpoint, abajo esta descrito cada uno.
+Se puede utilizar el usuario con cui 11111 ya que es vendedor y comprador a la vez.
 
 ### Instalacion
 ```
