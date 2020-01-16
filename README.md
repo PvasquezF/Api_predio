@@ -1,9 +1,22 @@
 # Api_predio
 
+Para cada enunciado descrito: 
+*El sistema debe permitir el registro de vendedores/compradores, utilizar /registrar descrita abajo
+*Los usuarios pueden tener ambos roles, utilizar /rolUsuario para agregar un nuevo rol al usuario, abajo mas info
+*Listar vehiculos de vendedores /vehiculosVendedor/:cui
+*Listar vehiculos de compradores /vehiculosComprador/:cui
+*Listar todos los vehiculos para admin /vehiculosAdministrador/:cui
+*Listar vehiculos disponibles /tienda
+*Comprar vehiculo utilizar /comprar
+*Estadisticas /estadisticasAdmin | /estadisticasComprador/cui | /estadisticasVendedor/cui
+
+Para cada endpoint, abajo esta descrito cada uno.
+
 ### Instalacion
 ```
 npm install
 ```
+Configurar la base de datos en el archivo conexion.js
 Ademas correr el script para la base de datos en mysql.
 
 ### Lista Endpoints

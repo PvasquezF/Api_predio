@@ -1,5 +1,5 @@
 create schema predio collate utf8mb4_general_ci;
-
+use predio;
 create table estado
 (
 	id_estado int auto_increment primary key,
@@ -298,7 +298,7 @@ begin
     select count(*) into @existeUsuario from USUARIO where USUARIO.cui = _cui;
     select count(*) into @esComprador from ROL_USUARIO ru, ROL r where r.nombre = 'Vendedor' and ru.cui = _cui and r.id_rol = ru.id_rol;
     if (@existeUsuario = 1 AND @esComprador = 1 ) then
-        SELECT v.placa, v.marca, v.modelo, v.año, v.color, e.nombre
+        SELECT v.placa, v.marca, v.modelo, v.año, v.color, e.nombre as estado
         FROM USUARIO u
             INNER JOIN USUARIO_VEHICULO uv
                 ON u.cui = uv.cui
@@ -330,11 +330,13 @@ INSERT INTO predio.estado (id_estado, nombre) VALUES (1, 'Vendido');
 INSERT INTO predio.estado (id_estado, nombre) VALUES (2, 'En venta');
 INSERT INTO predio.estado (id_estado, nombre) VALUES (3, 'No disponible actualmente');
 
-INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (11111, 2);
+INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (11111, 3);
 INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (22222, 3);
 INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (33333, 3);
 INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (44444, 3);
+INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (3020399370101, 3);
 INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (55555, 1);
+INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (11111, 2);
 INSERT INTO predio.rol_usuario (cui, id_rol) VALUES (3020399370101, 2);
 
 INSERT INTO predio.vehiculo (placa, modelo, marca, año, color, precio) VALUES ('111-aaa', 'A1', 'Audi', '2009-01-01', 'verde', 190000);
