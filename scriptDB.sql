@@ -47,7 +47,7 @@ create table compra
 	cui bigint not null,
 	placa varchar(10) not null,
 	precio_final decimal not null,
-	fecha_compra date null,
+	fecha_compra date null DEFAULT sysdate(),
 	primary key (cui, placa),
 	constraint compra_ibfk_1
 		foreign key (placa) references vehiculo (placa)
